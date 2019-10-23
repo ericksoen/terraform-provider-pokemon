@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"strconv"
 
 	poke "github.com/ericksoen/pokemon-go-client"
 	"github.com/hashicorp/terraform/helper/schema"
@@ -27,13 +28,14 @@ func dataSourcePokemonNameRead(d *schema.ResourceData, meta interface{}) error {
 
 	pokemon, err := client.GetRandomPokemon()
 
-	log.Printf("[INFO] Random Pokemon name is: %s", pokemon)
+	log.Printf("[INFO] Random Pokemon name is: %s", pokemon.Name)
+
 	if err != nil {
 		return err
 	}
 
-	d.SetId("12345")
-	d.Set("name", pokemon)
+	d.SetId(strconv.Itoa(pokemon.ID))
+	d.Set("name", pokemon.Name)
 
 	return nil
 }
