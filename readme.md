@@ -1,10 +1,10 @@
 ## Overview
 
-Create a custom Terraform provider and register a data source that returns a random Pokemon character.
+Create a custom Terraform provider and register a data source that returns a random Pokemon character from the [RapidAPI PokemonGo API](https://rapidapi.com/brianiswu/api/pokemon-go1?endpoint=apiendpoint_af8fc313-bc8c-4b86-8671-83a2212bdefc). The PokemonGo API requires an API key (free) to use, so you'll need to sign up for one before you can use the client.
 
 ## Implementation
 
-Create a `Provider` that registers the provider `Schema` and creates an instance of the 3rd party PokemonGo client. The provider also registers a single data source that retrieves a random Pokemon character and stores it in the state file.
+Create a `Provider` that registers the provider `Schema` and creates an instance of the [3rd party PokemonGo client](https://github.com/ericksoen/pokemon-go-client). The provider also registers a single data source that retrieves a random Pokemon character and stores it in the state file.
 
 ## Build the provider
 
@@ -37,7 +37,7 @@ $ terraform apply
 > name = Lickilicky
 ```
 
-Run `cat terraform.tfstate` to further confirm that the output has correctly updated our state file.
+You can also run `cat terraform.tfstate` to confirm that the output has correctly updated our state file.
 
 ## Additional Reading
 
