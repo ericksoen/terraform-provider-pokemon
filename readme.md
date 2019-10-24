@@ -34,7 +34,7 @@ $ terraform apply
 > Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 > Outputs:
-> name = Lickilicky
+> name = Pikachu
 ```
 
 You can also run `cat terraform.tfstate` to confirm that the output has correctly updated our state file.
